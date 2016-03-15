@@ -8,6 +8,8 @@
 #include "CalculateMarginalEntropy.h"
 #include "CalculateMarginalDistr.h"
 #include "CalculateGenoJointDistr.h"
+#include "PostCorrection.h"
+
 typedef long long  int64;
 typedef unsigned long long uint64;
 using namespace std;
@@ -76,6 +78,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//start loading data
 
 	ifstream fp;
+	ofstream fout;
 	string filename = "filenamelist.txt";
 
 	for(int i=0;i<65536;i++)
@@ -280,10 +283,18 @@ int _tmain(int argc, _TCHAR* argv[])
 	for(int i=0;i<InteractionMeasurePairs.size();i++)
 	{
 		int snp1 = InteractionPairs[i].first;
-
+		int snp2 = InteractionPairs[i].second;
+		CalculateGenoJointDistr(pgeno,nSNPs,nlongintcase,nlongintctrl,GenoJointDistr,snp1,snp2,pMarginalDistr);
+		InteractionMeasurePairs[i] = PostCorrection(GenoJointDistr,nsamples);
 	}
 
-	 
+	fout.open("InteractionRecords.txt");
+	for(int i=0;i<InteractionMeasurePairs.size();i++)
+	{
+		if(InteractionMeasurePairs[i]>thresholdRecord)
+			fout<<"SNP index:"<<InteractionPairs[i].first<<"  "<<InteractionPairs[i].second<<"Association: "<<MarginalAssociation[InteractionPairs[i].first]<<"  "<<MarginalAssociation[InteractionPairs[i].second]<<"Interaction: "<<InteractionMeasurePairs[i]<<endl;
+	}
+	fout.close();
 	while(1);
 	return 0;
 }
