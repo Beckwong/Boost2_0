@@ -1,19 +1,26 @@
-﻿Build started 2016/3/8 16:47:16.
+﻿Build started 2016/3/9 21:38:34.
      1>Project "C:\Users\mwangaq\Documents\GitHub\Boost2_0\Boost2\Boost2\Boost2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Boost2.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Boost2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GetDataSize.cpp
-         GetDataSize.cpp
-     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\getdatasize.cpp(1): warning C4627: '#include "GetDataSize.h"': skipped when looking for precompiled header use
-                 Add directive to 'StdAfx.h' or rebuild precompiled header
-     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\getdatasize.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Boost2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(32): warning C4293: '>>' : shift count negative or too big, undefined behavior
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(93): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(94): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(60): warning C4101: 'MarginalEntropyY' : unreferenced local variable
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(60): warning C4101: 'JointEntropyTwoSNP' : unreferenced local variable
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(60): warning C4101: 'JointEntropyTwoSNP_Y' : unreferenced local variable
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(38): warning C4101: 'end' : unreferenced local variable
+     1>c:\users\mwangaq\documents\github\boost2_0\boost2\boost2\main.cpp(38): warning C4101: 'start' : unreferenced local variable
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mwangaq\Documents\GitHub\Boost2_0\Boost2\Debug\Boost2.exe" /INCREMENTAL /NOLOGO opencv_ml249d.lib opencv_calib3d249d.lib opencv_contrib249d.lib opencv_core249d.lib opencv_features2d249d.lib opencv_flann249d.lib opencv_gpu249d.lib opencv_highgui249d.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_objdetect249d.lib opencv_ts249d.lib opencv_video249d.lib opencv_nonfree249d.lib opencv_ocl249d.lib opencv_photo249d.lib opencv_stitching249d.lib opencv_superres249d.lib opencv_videostab249d.lib opencv_objdetect249.lib opencv_ts249.lib opencv_video249.lib opencv_nonfree249.lib opencv_ocl249.lib opencv_photo249.lib opencv_stitching249.lib opencv_superres249.lib opencv_videostab249.lib opencv_calib3d249.lib opencv_contrib249.lib opencv_core249.lib opencv_features2d249.lib opencv_flann249.lib opencv_gpu249.lib opencv_highgui249.lib opencv_imgproc249.lib opencv_legacy249.lib opencv_ml249.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Boost2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\mwangaq\Documents\GitHub\Boost2_0\Boost2\Debug\Boost2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mwangaq\Documents\GitHub\Boost2_0\Boost2\Debug\Boost2.lib" /MACHINE:X86 Debug\Boost2.exe.embed.manifest.res
          Debug\GetDataSize.obj
+         Debug\LoadData.obj
          Debug\main.obj
          Debug\stdafx.obj
        Manifest:
@@ -29,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:16.18
+Time Elapsed 00:00:02.46

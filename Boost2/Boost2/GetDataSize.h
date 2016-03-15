@@ -2,12 +2,6 @@
 #ifndef _GETDATASIZE_H
 #define _GETDATASIZE_H
 
-#include<vector>
-#include<string>
-#include<time.h>
-#include<fstream>
-#include<iostream>
-
 using namespace std;
 
 void GetDataSize(string filename,vector<vector<int>>&DataSize,vector<int>&nCase_Ctrl);
