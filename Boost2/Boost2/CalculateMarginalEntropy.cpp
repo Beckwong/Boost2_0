@@ -1,5 +1,7 @@
 #include "CalculateMarginalEntropy.h"
-
+#include "stdafx.h"
+#include<vector>
+#include "main.h"
 using namespace std;
 
 void CalculateMarginalEntropy(vector<vector<genotype*>>&pgeno,vector<vector<int> >&DataSize,vector<int>&nCase_Ctrl,vector<double>&MarginalEntropySNP,vector<double>&MarginalEntropySNP_Y)
@@ -39,7 +41,7 @@ void CalculateMarginalEntropy(vector<vector<genotype*>>&pgeno,vector<vector<int>
 			double ptmp;
 			if(tmp>0)
 			{
-				ptmp = ptmp/nsample;
+				ptmp = tmp/nsample;
 				MarginalEntropySNP[i]+= -(ptmp)*log(ptmp);
 			}
 			if(GenoMarginalDistr[j][0]>0)

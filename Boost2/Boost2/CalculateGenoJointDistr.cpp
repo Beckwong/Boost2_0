@@ -1,5 +1,7 @@
 #include "CalculateGenoJointDistr.h"
-
+#include "stdafx.h"
+#include<vector>
+#include "main.h"
 using namespace std;
 
 
@@ -38,7 +40,7 @@ void CalculateGenoJointDistr(vector<vector<genotype*>>&pgeno,int nSNPs,int nlong
 	GenoJointDistr[0][6] = pMarginalDistr[snp2]->MarginalDistrSNP_Y[0][0] - GenoJointDistr[0][0] - GenoJointDistr[0][3];
 	GenoJointDistr[0][7] = pMarginalDistr[snp2]->MarginalDistrSNP_Y[1][0] - GenoJointDistr[0][1] - GenoJointDistr[0][4];
 	
-	GenoJointDistr[0][8] = pMarginalDistr[snp1]->MarginalDistrSNP_Y[2][0] - GenoJointDistr[0][2] - GenoJointDistr[0][5];
+	GenoJointDistr[0][8] = pMarginalDistr[snp2]->MarginalDistrSNP_Y[2][0] - GenoJointDistr[0][2] - GenoJointDistr[0][5];
 
 	// for control:
 	GenoJointDistr[1][2] = pMarginalDistr[snp1]->MarginalDistrSNP_Y[0][1] - GenoJointDistr[1][0] - GenoJointDistr[1][1];

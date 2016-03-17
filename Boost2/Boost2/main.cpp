@@ -16,7 +16,7 @@ using namespace std;
 
 static unsigned int wordbit[65536];
 
-static int popCount(uint64 i)
+int popcount(uint64 i)
 {
 	return (wordbit[i&0xFFFF]+wordbit[(i>>16)&0xFFFF]+wordbit[(i>>32)&0xFFFF]+wordbit[i>>48]);
 }
@@ -25,7 +25,7 @@ double Abs(double a){
 	return (a<0)?-a:a;
 }
 
-int bitCount(int i){
+int bitCount(uint64 i){
 	i = i - ((i >> 1) & 0x5555555555555555);
 	i = (i & 0x3333333333333333) + ((i >> 2) & 0x3333333333333333);
 	i = (i + (i >> 4)) & 0x0f0f0f0f0f0f0f0f;
@@ -61,7 +61,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	vector<vector<double>>Pca(2,vector<double>(3,0));
 	vector<pair<int,int>>InteractionPairs;
 	vector<double>InteractionMeasurePairs;
-	vector<int>DistrCollection(1001);
+	vector<int>DistrCollection(1001,0);
 	int InteractionCount = 0;
 	double maxInteraction = - 9999999;
 	double minInteraction =  9999999;
@@ -81,7 +81,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	ofstream fout;
 	string filename = "filenamelist.txt";
 
-	for(int i=0;i<65536;i++)
+	for(uint64 i=0;i<65536;i++)
 	{
 		wordbit[i] = bitCount(i);
 	}
@@ -164,7 +164,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	  
 	CalculateMarginalDistr(pgeno,nSNPs,nsamples,nlongintcase,nlongintctrl,pMarginalDistr);
 
-	DistrCollection.resize(nSNPs);
+	//DistrCollection.resize(nSNPs+1);
 
 	//calculating interaction 
 	for(int snp1=0;snp1<nSNPs-1;snp1++)
@@ -219,7 +219,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			{
 				for(int j=0;j<2;j++)
 				{
-					Pca[i][j] = (double)(pMarginalDistr[snp1]->MarginalDistrSNP_Y[i][j])/pMarginalDistr[snp1]->MarginalDistrSNP[i];
+					Pca[j][i] = (double)(pMarginalDistr[snp1]->MarginalDistrSNP_Y[i][j])/pMarginalDistr[snp1]->MarginalDistrSNP[i];
 				}
 			}
 
@@ -227,7 +227,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			// tao = sum(Papprx)
 			// sum(p.* log(p) - p.*log(Pappr) + p.* log(tao))
 			double tao = 0.0;
-			double InteractionMeasure;
+			double InteractionMeasure=0;
 			    //i for A,j for B, k for C
 			for(int i = 0;i<3;i++)
 			{
@@ -240,7 +240,7 @@ int _tmain(int argc, _TCHAR* argv[])
 						{
 							InteractionMeasure += ptmp1 * log(ptmp1);  
 						}
-						ptmp2 = Pab[j][i]*Pbc[k][j]*Pca[i][k];
+						ptmp2 = Pab[j][i]*Pbc[k][j]*Pca[k][i];
 						if(ptmp2>0)
 						{
 							InteractionMeasure += -ptmp1*log(ptmp2);
@@ -292,10 +292,38 @@ int _tmain(int argc, _TCHAR* argv[])
 	for(int i=0;i<InteractionMeasurePairs.size();i++)
 	{
 		if(InteractionMeasurePairs[i]>thresholdRecord)
-			fout<<"SNP index:"<<InteractionPairs[i].first<<"  "<<InteractionPairs[i].second<<"Association: "<<MarginalAssociation[InteractionPairs[i].first]<<"  "<<MarginalAssociation[InteractionPairs[i].second]<<"Interaction: "<<InteractionMeasurePairs[i]<<endl;
+			fout<<"SNP index:"<<InteractionPairs[i].first<<"  "<<InteractionPairs[i].second<<"    "<<"Association: "<<MarginalAssociation[InteractionPairs[i].first]<<"  "<<MarginalAssociation[InteractionPairs[i].second]<<"    "<<"Interaction: "<<InteractionMeasurePairs[i]<<endl;
 	}
 	fout.close();
-	while(1);
+
+	//free memory
+	vector<MarginalDistr*>::iterator it= pMarginalDistr.begin();
+
+	for(;it!=pMarginalDistr.end();++it)
+	{
+		if(*it!=NULL)
+		{
+			delete *it;
+			*it=NULL;
+		}
+	}
+	pMarginalDistr.clear();
+
+	for(int i=0;i<nSNPs;i++)
+	{
+		vector<genotype*>::iterator iter=pgeno[i].begin();
+		for(;iter!=pgeno[i].end();++iter)
+		{
+			if(*iter!=NULL)
+			{
+				delete *iter;
+				*iter=NULL;
+			}
+		}
+		pgeno[i].clear();
+	}
+	pgeno.clear();
+
 	return 0;
 }
 

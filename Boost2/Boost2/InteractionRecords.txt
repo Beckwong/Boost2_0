@@ -1,0 +1,2 @@
+SNP index:653  929    Association: 1.88598  0.119234    Interaction: 33.3812
+SNP index:945  974    Association: 0.690774  0.722003    Interaction: 30.7141

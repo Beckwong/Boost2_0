@@ -1,4 +1,7 @@
 #include "CalculateMarginalDistr.h"
+#include "stdafx.h"
+#include<vector>
+#include"main.h"
 using namespace std;
 
 void CalculateMarginalDistr(vector<vector<genotype*>>&pgeno,int nSNPs, int nsamples, int nlongintcase, int nlongintctrl, vector<MarginalDistr*>&pMarginalDistr)

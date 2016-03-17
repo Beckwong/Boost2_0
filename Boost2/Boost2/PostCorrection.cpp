@@ -1,4 +1,7 @@
 #include "PostCorrection.h"
+#include "stdafx.h"
+#include<vector>
+#include"main.h"
 using namespace std;
 
 double PostCorrection(vector<vector<int>>&GenoJointDistr,int nsamples)

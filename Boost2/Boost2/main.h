@@ -19,9 +19,9 @@ typedef unsigned long long uint64;
 
 static int LengthLongType = 64;
 
-static int popcount(uint64 i);
+int popcount(uint64 i);
 double Abs(double a);
-int bitCount(int i);
+int bitCount(uint64 i);
 
 class genotype{
 public:
@@ -35,6 +35,6 @@ class MarginalDistr{
 public:
 	vector<int> MarginalDistrSNP;
 	vector<vector<int>>MarginalDistrSNP_Y; 
-	MarginalDistr()£ºMarginalDistrSNP(3),MarginalDistrSNP_Y(3,vector<int>(2)){};
+	MarginalDistr():MarginalDistrSNP(3),MarginalDistrSNP_Y(3,vector<int>(2)){};
 };
 #endif
