@@ -1,0 +1,3 @@
+No.1Pairs:  0 and 1 Interaction: 40.1498
+No.2Pairs:  157 and 824 Interaction: 35.4764
+No.3Pairs:  725 and 969 Interaction: 30.0671

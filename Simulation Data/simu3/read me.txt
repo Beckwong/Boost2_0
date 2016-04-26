@@ -1,0 +1,1 @@
+(1/(1+exp(-(-16+5*SNP1[i]+5*SNP2[i]+2*SNP1[i]*SNP2[i]+2*Gender[i]))))

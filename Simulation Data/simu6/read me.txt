@@ -1,0 +1,2 @@
+sample size=5000
+tmp_prob=(1/(1+exp(-(-6+1*SNP1[i]+1*SNP2[i]+2*SNP1[i]*SNP2[i]+1*Gender[i]))))

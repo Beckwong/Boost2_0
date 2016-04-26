@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BOOST_cov", "BOOST_cov\BOOST_cov.vcxproj", "{06724B5C-B0C7-4C94-9B8C-97D3C8EAC6C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06724B5C-B0C7-4C94-9B8C-97D3C8EAC6C3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06724B5C-B0C7-4C94-9B8C-97D3C8EAC6C3}.Debug|Win32.Build.0 = Debug|Win32
+		{06724B5C-B0C7-4C94-9B8C-97D3C8EAC6C3}.Release|Win32.ActiveCfg = Release|Win32
+		{06724B5C-B0C7-4C94-9B8C-97D3C8EAC6C3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

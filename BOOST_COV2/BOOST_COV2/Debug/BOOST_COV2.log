@@ -1,0 +1,47 @@
+﻿Build started 2016/3/22 16:06:14.
+     1>Project "C:\Users\mwangaq\Documents\GitHub\Boost2_0\BOOST_COV2\BOOST_COV2\BOOST_COV2.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "C:\Users\mwangaq\Documents\GitHub\Boost2_0\BOOST_COV2\Debug\".
+       InitializeBuildStatus:
+         Creating "Debug\BOOST_COV2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\BOOST_COV2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\BOOST_COV2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp CountDigit.cpp GetDataSize.cpp
+         GetDataSize.cpp
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.cpp(1): warning C4627: '#include "GetDataSize.h"': skipped when looking for precompiled header use
+                 Add directive to 'StdAfx.h' or rebuild precompiled header
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.cpp(48): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "StdAfx.h"' to your source?
+         CountDigit.cpp
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\countdigit.cpp(1): warning C4627: '#include "CountDigit.h"': skipped when looking for precompiled header use
+                 Add directive to 'StdAfx.h' or rebuild precompiled header
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\countdigit.cpp(2): warning C4627: '#include "main.h"': skipped when looking for precompiled header use
+                 Add directive to 'StdAfx.h' or rebuild precompiled header
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\countdigit.cpp(28): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "StdAfx.h"' to your source?
+         main.cpp
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(15): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(15): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2065: 'vector' : undeclared identifier
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2275: 'uint64' : illegal use of this type as an expression
+                 c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(11) : see declaration of 'uint64'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2059: syntax error : ')'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2612: trailing ')' illegal in base/member initializer list
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2143: syntax error : missing ';' before ')'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.h(17): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(6): error C2065: 'string' : undeclared identifier
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(6): error C2146: syntax error : missing ')' before identifier 'filename'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(6): error C2182: 'GetDataSize' : illegal use of type 'void'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(6): error C2059: syntax error : ')'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(7): error C2065: 'ifstream' : undeclared identifier
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(7): error C2146: syntax error : missing ')' before identifier 'fp_i'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(7): error C2182: 'count_sample' : illegal use of type 'void'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\getdatasize.h(7): error C2059: syntax error : ')'
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.cpp(13): error C2601: 'wmain' : local function definitions are illegal
+     1>c:\users\mwangaq\documents\github\boost2_0\boost_cov2\boost_cov2\main.cpp(74): fatal error C1004: unexpected end-of-file found
+         Generating Code...
+     1>Done Building Project "C:\Users\mwangaq\Documents\GitHub\Boost2_0\BOOST_COV2\BOOST_COV2\BOOST_COV2.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.05

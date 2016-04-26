@@ -1,0 +1,1 @@
+Simulation data with exp(-12+5X1+5X2+2Gender)
